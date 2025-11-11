@@ -1,11 +1,8 @@
-![image](https://user-images.githubusercontent.com/38807639/124927237-b36ec380-dffe-11eb-8362-016549534195.png)
-
-
 This is a python based, mail server independent out-of-office notice for multiple mail accounts.  
 **Do you have multiple mail accounts on hosts, that don't support proper out-of-office notices?**  
 This could be for you. Run this on server, nas, homelab or raspberry. Run this on any device that is powered on 24/7 and supports python.
 
-See Changelog here: https://github.com/praul/autoreply/wiki/Changelog
+See Changelog (from forked repo) here: https://github.com/praul/autoreply/wiki/Changelog
              
 **Use at own risk. Try interactive first and cancel script if it somehow messes up.**
              
@@ -25,12 +22,12 @@ I run this 24/7 on a vserver for multiple mail accounts without problems, but pl
 - **USE UTC DATETIMES as of 0.5** for your autoreply begin and end datetimes.
 
 ## Usage: Docker Container
-- **Image**: Clone this repo and build from dockerfile. Or use praul1/autoreply:latest from docker hub  
+- **Image**: Clone this repo and build from dockerfile. Or use eddictnl/autoreply:latest from docker hub  
 - **Docker-Compose** (recommended): You can use the supplied docker-compose.yml. Customize path to point to your repliers.py and db folder. 
 - The docker-compose file also includes the docker-log viewer "Dozzle" (https://github.com/amir20/dozzle). When launched, you can visit: http://HOST:10101/show?name=autoreply_autoreply to view the log of autoreply. 
 - 
 - **Run**: You need to mount your repliers.py file to /app/repliers.py inside the container. Also, mount a writable db folder to /app/db 
-- **Run command**: ```docker run -v /etc/localtime:/etc/localtime:ro -v /PATH/TO/repliers.py:/app/repliers.py -v /PATH/TO/db:/app/db praul1/autoreply:latest```
+- **Run command**: ```docker run -v /etc/localtime:/etc/localtime:ro -v /PATH/TO/repliers.py:/app/repliers.py -v /PATH/TO/db:/app/db eddictnl/autoreply:latest```
   
 ## Usage: Python
 - You will need python3 and python-emails (https://python-emails.readthedocs.io/en/latest/)

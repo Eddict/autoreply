@@ -2,7 +2,7 @@
 version: "3"
 services:
   autoreply:
-    image: praul1/autoreply:0.5-testing
+    image: eddictnl/autoreply:latest
     container_name: autoreply_autoreply
     environment:
       - PUID=1000 
